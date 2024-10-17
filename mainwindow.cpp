@@ -1,5 +1,6 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
+#include <QString>
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -25,28 +26,33 @@ MainWindow::~MainWindow()
 
 void MainWindow::btnNumClicked()
 {
-    QString str = ui->display->text();
-    str += qobject_cast<QPushButton*>(sender())->text();
+    QString str=ui->display->text();
+    str+=qobject_cast<QPushButton*>(sender())->text();
     ui->display->setText(str);
-    ui->statusBar->showMessage(qobject_cast<QPushButton*>(sender())->text()+"btn num clicked");
+    ui->statusBar->showMessage(qobject_cast<QPushButton*>(sender())->text()+"btn clicked");
 }
 
 
 
 void MainWindow::on_btnPeriod_clicked()
 {
-    QString str = ui->display->text();
-    if(!str.contains(".")){
-        str += qobject_cast<QPushButton*>(sender())->text();
+    if(!operand.contains(".")){
+        operand += qobject_cast<QPushButton*>(sender())->text();
     }
-    ui->display->setText(str);
+    ui->display->setText(operand);
 }
 
 
 void MainWindow::on_btnDel_clicked()
 {
-    QString str = ui->display->text();
-    str = str.left(str.length()-1);
-    ui->display->setText(str);
+    operand = operand.left(operand.length()-1);
+    ui->display->setText(operand);
+}
+
+
+void MainWindow::on_btnClearAll_clicked()
+{
+    operand.clear();
+    ui->display->setText(operand);
 }
 
