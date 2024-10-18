@@ -1,9 +1,7 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
-<<<<<<< HEAD
 #include <QString>
-=======
->>>>>>> main
+
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -20,14 +18,11 @@ MainWindow::MainWindow(QWidget *parent)
     connect(ui->btnNum7,SIGNAL(clicked()),this,SLOT(btnNumClicked()));
     connect(ui->btnNum8,SIGNAL(clicked()),this,SLOT(btnNumClicked()));
     connect(ui->btnNum9,SIGNAL(clicked()),this,SLOT(btnNumClicked()));
-<<<<<<< HEAD
-=======
 
     connect(ui->btnPlus,SIGNAL(clicked()),this,SLOT(btnBinaryOperatorClicked()));
     connect(ui->btnMinus,SIGNAL(clicked()),this,SLOT(btnBinaryOperatorClicked()));
     connect(ui->btnMltiple,SIGNAL(clicked()),this,SLOT(btnBinaryOperatorClicked()));
     connect(ui->btnDivide,SIGNAL(clicked()),this,SLOT(btnBinaryOperatorClicked()));
->>>>>>> main
 }
 
 MainWindow::~MainWindow()
@@ -35,14 +30,14 @@ MainWindow::~MainWindow()
     delete ui;
 }
 
-<<<<<<< HEAD
-void MainWindow::btnNumClicked()
-{
-    QString str=ui->display->text();
-    str+=qobject_cast<QPushButton*>(sender())->text();
-    ui->display->setText(str);
-    ui->statusBar->showMessage(qobject_cast<QPushButton*>(sender())->text()+"btn clicked");
-=======
+// void MainWindow::btnNumClicked()
+// {
+//     QString str=ui->display->text();
+//     str+=qobject_cast<QPushButton*>(sender())->text();
+//     ui->display->setText(str);
+//     ui->statusBar->showMessage(qobject_cast<QPushButton*>(sender())->text()+"btn clicked");
+//     QString MainWindow::calculation(bool *ok);
+// }
 QString MainWindow::calculation(bool *ok)
 {
 
@@ -63,15 +58,11 @@ void MainWindow::btnNumClicked()
         operand="";
     operand+=digit;
     ui->display->setText(operand);
->>>>>>> main
 }
 
 
 
-<<<<<<< HEAD
-=======
 
->>>>>>> main
 void MainWindow::on_btnPeriod_clicked()
 {
     if(!operand.contains(".")){
@@ -94,8 +85,6 @@ void MainWindow::on_btnClearAll_clicked()
     ui->display->setText(operand);
 }
 
-<<<<<<< HEAD
-=======
 void MainWindow::btnBinaryOperatorClicked()
 {
     ui->statusBar->showMessage("last operand"+operand);
@@ -115,6 +104,7 @@ void MainWindow::btnBinaryOperatorClicked()
 }
 
 
+
 void MainWindow::on_btnEqual_clicked()
 {
     if(operand!=""){
@@ -125,4 +115,3 @@ void MainWindow::on_btnEqual_clicked()
     ui->display->setText(result);
 }
 
->>>>>>> main

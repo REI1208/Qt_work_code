@@ -383,7 +383,7 @@ Makefile: ../../Lab1.pro ../../../../qt/6.7.2/mingw_64/mkspecs/features/spec_pre
 		../../../../qt/6.7.2/mingw_64/mkspecs/features/qt_config.prf \
 		../../../../qt/6.7.2/mingw_64/mkspecs/win32-g++/qmake.conf \
 		../../../../qt/6.7.2/mingw_64/mkspecs/features/spec_post.prf \
-		../../.qmake.stash \
+		.qmake.stash \
 		../../../../qt/6.7.2/mingw_64/mkspecs/features/exclusive_builds.prf \
 		../../../../qt/6.7.2/mingw_64/mkspecs/features/toolchain.prf \
 		../../../../qt/6.7.2/mingw_64/mkspecs/features/default_pre.prf \
@@ -731,7 +731,7 @@ Makefile: ../../Lab1.pro ../../../../qt/6.7.2/mingw_64/mkspecs/features/spec_pre
 ../../../../qt/6.7.2/mingw_64/mkspecs/features/qt_config.prf:
 ../../../../qt/6.7.2/mingw_64/mkspecs/win32-g++/qmake.conf:
 ../../../../qt/6.7.2/mingw_64/mkspecs/features/spec_post.prf:
-../../.qmake.stash:
+.qmake.stash:
 ../../../../qt/6.7.2/mingw_64/mkspecs/features/exclusive_builds.prf:
 ../../../../qt/6.7.2/mingw_64/mkspecs/features/toolchain.prf:
 ../../../../qt/6.7.2/mingw_64/mkspecs/features/default_pre.prf:
@@ -775,7 +775,7 @@ all: release-all debug-all  FORCE
 clean: release-clean debug-clean  FORCE
 distclean: release-distclean debug-distclean  FORCE
 	-$(DEL_FILE) Makefile
-	-$(DEL_FILE) D:\Qt\Code\Lab1\build\Desktop_Qt_6_7_2_MinGW_64_bit-Profile\Lab1.exe.debug
+	-$(DEL_FILE) D:\Qt\Code\Lab1\build\Desktop_Qt_6_7_2_MinGW_64_bit-Profile\Lab1.exe.debug .qmake.stash
 
 release-mocclean:
 	$(MAKE) -f $(MAKEFILE).Release mocclean
