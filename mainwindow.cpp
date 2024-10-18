@@ -30,21 +30,13 @@ MainWindow::~MainWindow()
     delete ui;
 }
 
-// void MainWindow::btnNumClicked()
-// {
-//     QString str=ui->display->text();
-//     str+=qobject_cast<QPushButton*>(sender())->text();
-//     ui->display->setText(str);
-//     ui->statusBar->showMessage(qobject_cast<QPushButton*>(sender())->text()+"btn clicked");
-//     QString MainWindow::calculation(bool *ok);
-// }
 QString MainWindow::calculation(bool *ok)
 {
 
-    if(operand.size()==2&&operand.size()>0){
+    if(operands.size()==2&&opcodes.size()>0){
         ui->statusBar->showMessage("calcuation is in progress");
     }else{
-        ui->statusBar->showMessage(QString("operand is {1}"));
+        ui->statusBar->showMessage(QString("operand is %1,opcode is %2").arg(operands.size()).arg(opcodes.size()));
     }
     return "";
 }
@@ -95,11 +87,11 @@ void MainWindow::btnBinaryOperatorClicked()
         operands.push_back(operand);
         operand="";
 
-        operands.push_back(opcode);
-
+        opcodes.push_back(opcode);
+        QString result =  calculation();
+        ui->display->setText(result);
     }
-    QString result =  calculation();
-    ui->display->setText(result);
+
 
 }
 
