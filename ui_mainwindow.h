@@ -47,7 +47,7 @@ public:
     QPushButton *btnNum5;
     QPushButton *btnClearAll;
     QPushButton *btnNum6;
-    QPushButton *btnSign2;
+    QPushButton *btnSign;
     QPushButton *btnClear;
     QPushButton *btnPercnetage;
     QPushButton *btnDel;
@@ -60,7 +60,24 @@ public:
     {
         if (MainWindow->objectName().isEmpty())
             MainWindow->setObjectName("MainWindow");
-        MainWindow->resize(686, 448);
+        MainWindow->resize(466, 444);
+        MainWindow->setStyleSheet(QString::fromUtf8("QPushButton{\n"
+"background-color:rgba(50,50,50,100);\n"
+"font-size:36pt;\n"
+"color:white;\n"
+"border-radius:2px;\n"
+"}\n"
+"QPushButton:hover{\n"
+"background-color: lightgreen;\n"
+"color:black;\n"
+"}\n"
+"QPushButton:pressed{\n"
+"background-color: red;\n"
+"color:black;\n"
+"}\n"
+"QLineEdit{\n"
+"font-size:48pt;\n"
+"}"));
         centralwidget = new QWidget(MainWindow);
         centralwidget->setObjectName("centralwidget");
         QSizePolicy sizePolicy(QSizePolicy::Policy::Minimum, QSizePolicy::Policy::Preferred);
@@ -169,6 +186,7 @@ public:
         btnNum7->setObjectName("btnNum7");
         sizePolicy1.setHeightForWidth(btnNum7->sizePolicy().hasHeightForWidth());
         btnNum7->setSizePolicy(sizePolicy1);
+        btnNum7->setStyleSheet(QString::fromUtf8(""));
 
         gridLayout->addWidget(btnNum7, 3, 0, 1, 1);
 
@@ -214,12 +232,12 @@ public:
 
         gridLayout->addWidget(btnNum6, 4, 2, 1, 1);
 
-        btnSign2 = new QPushButton(centralwidget);
-        btnSign2->setObjectName("btnSign2");
-        sizePolicy1.setHeightForWidth(btnSign2->sizePolicy().hasHeightForWidth());
-        btnSign2->setSizePolicy(sizePolicy1);
+        btnSign = new QPushButton(centralwidget);
+        btnSign->setObjectName("btnSign");
+        sizePolicy1.setHeightForWidth(btnSign->sizePolicy().hasHeightForWidth());
+        btnSign->setSizePolicy(sizePolicy1);
 
-        gridLayout->addWidget(btnSign2, 6, 0, 1, 1);
+        gridLayout->addWidget(btnSign, 6, 0, 1, 1);
 
         btnClear = new QPushButton(centralwidget);
         btnClear->setObjectName("btnClear");
@@ -232,6 +250,7 @@ public:
         btnPercnetage->setObjectName("btnPercnetage");
         sizePolicy1.setHeightForWidth(btnPercnetage->sizePolicy().hasHeightForWidth());
         btnPercnetage->setSizePolicy(sizePolicy1);
+        btnPercnetage->setStyleSheet(QString::fromUtf8(""));
 
         gridLayout->addWidget(btnPercnetage, 1, 0, 1, 1);
 
@@ -262,7 +281,7 @@ public:
         MainWindow->setCentralWidget(centralwidget);
         menubar = new QMenuBar(MainWindow);
         menubar->setObjectName("menubar");
-        menubar->setGeometry(QRect(0, 0, 686, 25));
+        menubar->setGeometry(QRect(0, 0, 466, 21));
         MainWindow->setMenuBar(menubar);
         statusBar = new QStatusBar(MainWindow);
         statusBar->setObjectName("statusBar");
@@ -295,7 +314,7 @@ public:
         btnNum5->setText(QCoreApplication::translate("MainWindow", "5", nullptr));
         btnClearAll->setText(QCoreApplication::translate("MainWindow", "C", nullptr));
         btnNum6->setText(QCoreApplication::translate("MainWindow", "6", nullptr));
-        btnSign2->setText(QCoreApplication::translate("MainWindow", "+/-", nullptr));
+        btnSign->setText(QCoreApplication::translate("MainWindow", "+/-", nullptr));
         btnClear->setText(QCoreApplication::translate("MainWindow", "CE", nullptr));
         btnPercnetage->setText(QCoreApplication::translate("MainWindow", "%", nullptr));
         btnDel->setText(QCoreApplication::translate("MainWindow", "\342\214\253", nullptr));
