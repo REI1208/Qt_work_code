@@ -47,7 +47,7 @@ public:
     QPushButton *btnNum5;
     QPushButton *btnClearAll;
     QPushButton *btnNum6;
-    QPushButton *btnSign2;
+    QPushButton *btnSign;
     QPushButton *btnClear;
     QPushButton *btnPercnetage;
     QPushButton *btnDel;
@@ -214,12 +214,12 @@ public:
 
         gridLayout->addWidget(btnNum6, 4, 2, 1, 1);
 
-        btnSign2 = new QPushButton(centralwidget);
-        btnSign2->setObjectName("btnSign2");
-        sizePolicy1.setHeightForWidth(btnSign2->sizePolicy().hasHeightForWidth());
-        btnSign2->setSizePolicy(sizePolicy1);
+        btnSign = new QPushButton(centralwidget);
+        btnSign->setObjectName("btnSign");
+        sizePolicy1.setHeightForWidth(btnSign->sizePolicy().hasHeightForWidth());
+        btnSign->setSizePolicy(sizePolicy1);
 
-        gridLayout->addWidget(btnSign2, 6, 0, 1, 1);
+        gridLayout->addWidget(btnSign, 6, 0, 1, 1);
 
         btnClear = new QPushButton(centralwidget);
         btnClear->setObjectName("btnClear");
@@ -262,7 +262,7 @@ public:
         MainWindow->setCentralWidget(centralwidget);
         menubar = new QMenuBar(MainWindow);
         menubar->setObjectName("menubar");
-        menubar->setGeometry(QRect(0, 0, 686, 25));
+        menubar->setGeometry(QRect(0, 0, 686, 21));
         MainWindow->setMenuBar(menubar);
         statusBar = new QStatusBar(MainWindow);
         statusBar->setObjectName("statusBar");
@@ -295,7 +295,7 @@ public:
         btnNum5->setText(QCoreApplication::translate("MainWindow", "5", nullptr));
         btnClearAll->setText(QCoreApplication::translate("MainWindow", "C", nullptr));
         btnNum6->setText(QCoreApplication::translate("MainWindow", "6", nullptr));
-        btnSign2->setText(QCoreApplication::translate("MainWindow", "+/-", nullptr));
+        btnSign->setText(QCoreApplication::translate("MainWindow", "+/-", nullptr));
         btnClear->setText(QCoreApplication::translate("MainWindow", "CE", nullptr));
         btnPercnetage->setText(QCoreApplication::translate("MainWindow", "%", nullptr));
         btnDel->setText(QCoreApplication::translate("MainWindow", "\342\214\253", nullptr));

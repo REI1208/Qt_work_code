@@ -29,6 +29,7 @@ MainWindow::MainWindow(QWidget *parent)
     connect(ui->btnInverse,SIGNAL(clicked()),this,SLOT(btnUnaryOperatorClicked()));
     connect(ui->btnSquare,SIGNAL(clicked()),this,SLOT(btnUnaryOperatorClicked()));
     connect(ui->btnSqrt,SIGNAL(clicked()),this,SLOT(btnUnaryOperatorClicked()));
+    connect(ui->btnSign2,SIGNAL(clicked()),this,SLOT(btnUnaryOperatorClicked()));
 }
 
 MainWindow::~MainWindow()
@@ -60,6 +61,8 @@ QString MainWindow::calculation(bool *ok)
         else if(op == "/"){
             result = operand1/operand2;
         }
+
+        operands.push_back(QString::number(result));
 
         ui->statusBar->showMessage(QString("calcuation is in progress;operand is %1,opcode is %2").arg(operands.size()).arg(opcodes.size()));
     }else{
@@ -139,6 +142,9 @@ void MainWindow::btnUnaryOperatorClicked()
         }
         else if(op=="√"){
             result =sqrt(result);
+        }
+        else if(op=="+/-"){
+            result = -result;
         }
         ui->display->setText(QString::number(result));
     }
