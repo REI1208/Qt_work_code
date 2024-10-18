@@ -11,22 +11,22 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>MainWindow</string>
+   <string>计算器-吴杭铮-2022414040233</string>
   </property>
   <property name="styleSheet">
    <string notr="true">QPushButton{
-background-color:rgba(50,50,50,100);
+background-color: rgb(180, 180, 180);
 font-size:36pt;
 color:white;
 border-radius:2px;
 }
 QPushButton:hover{
-background-color: lightgreen;
+background-color: rgb(194, 194, 194);
 color:black;
 }
 QPushButton:pressed{
-background-color: red;
-color:black;
+background-color: rgb(255, 249, 243);
+color:grey;
 }
 QLineEdit{
 font-size:48pt;

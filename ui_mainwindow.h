@@ -62,18 +62,18 @@ public:
             MainWindow->setObjectName("MainWindow");
         MainWindow->resize(466, 444);
         MainWindow->setStyleSheet(QString::fromUtf8("QPushButton{\n"
-"background-color:rgba(50,50,50,100);\n"
+"background-color: rgb(180, 180, 180);\n"
 "font-size:36pt;\n"
 "color:white;\n"
 "border-radius:2px;\n"
 "}\n"
 "QPushButton:hover{\n"
-"background-color: lightgreen;\n"
+"background-color: rgb(194, 194, 194);\n"
 "color:black;\n"
 "}\n"
 "QPushButton:pressed{\n"
-"background-color: red;\n"
-"color:black;\n"
+"background-color: rgb(255, 249, 243);\n"
+"color:grey;\n"
 "}\n"
 "QLineEdit{\n"
 "font-size:48pt;\n"
@@ -294,7 +294,7 @@ public:
 
     void retranslateUi(QMainWindow *MainWindow)
     {
-        MainWindow->setWindowTitle(QCoreApplication::translate("MainWindow", "MainWindow", nullptr));
+        MainWindow->setWindowTitle(QCoreApplication::translate("MainWindow", "\350\256\241\347\256\227\345\231\250-\345\220\264\346\235\255\351\223\256-2022414040233", nullptr));
         btnSquare->setText(QCoreApplication::translate("MainWindow", "x^2", nullptr));
         display->setPlaceholderText(QCoreApplication::translate("MainWindow", "0", nullptr));
         btnNum4->setText(QCoreApplication::translate("MainWindow", "4", nullptr));
