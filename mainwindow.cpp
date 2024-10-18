@@ -55,7 +55,7 @@ QString MainWindow::calculation(bool *ok)
         else if(op == "-"){
             result = operand1-operand2;
         }
-        else if(op == "*"){
+        else if(op == "×"){
             result = operand1*operand2;
         }
         else if(op == "/"){
@@ -104,6 +104,8 @@ void MainWindow::on_btnDel_clicked()
 void MainWindow::on_btnClearAll_clicked()
 {
     operand.clear();
+    operands.clear();
+    opcodes.clear();
     ui->display->setText(operand);
 }
 
@@ -112,15 +114,15 @@ void MainWindow::btnBinaryOperatorClicked()
     ui->statusBar->showMessage("last operand"+operand);
     QString opcode = qobject_cast<QPushButton*>(sender())->text();
 
-
     if(operand!=""){
         operands.push_back(operand);
         operand="";
-
-        opcodes.push_back(opcode);
-        QString result =  calculation();
+    }
+    if (operands.size() == 2) {
+        QString result = calculation();  // 执行运算并显示结果
         ui->display->setText(result);
     }
+    opcodes.push_back(opcode);
 }
 
 void MainWindow::btnUnaryOperatorClicked()
@@ -147,6 +149,7 @@ void MainWindow::btnUnaryOperatorClicked()
             result = -result;
         }
         ui->display->setText(QString::number(result));
+        operand=QString::number(result);
     }
 }
 
@@ -158,7 +161,15 @@ void MainWindow::on_btnEqual_clicked()
         operands.push_back(operand);
         operand="";
     }
-    QString result =  calculation();
-    ui->display->setText(result);
+    // 如果已经有两个操作数，则进行计算
+    if (operands.size() == 2) {
+        QString result = calculation();  // 计算并显示结果
+        ui->display->setText(result);
+
+        // 清空操作符队列，并将计算结果作为下一个运算的初始值
+        opcodes.clear();
+        operands.clear();
+        operand=result;
+    }
 }
 
