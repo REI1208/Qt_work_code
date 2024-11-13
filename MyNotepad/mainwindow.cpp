@@ -13,6 +13,7 @@ MainWindow::MainWindow(QWidget *parent)
     ui->setupUi(this);
 
     textChanged = false;
+    on_actionNew_triggered();
 
     statusLabel.setMaximumWidth(150);
     statusLabel.setText("Length: "+ QString::number(0) + "   lines: " + QString::number(1));
@@ -26,6 +27,11 @@ MainWindow::MainWindow(QWidget *parent)
     author->setText(("吴杭铮"));
     ui->statusbar->addPermanentWidget(author);
 
+    ui->actionCopy->setEnabled(false);
+    ui->actionRedo->setEnabled(false);
+    ui->actionCopy->setEnabled(false);
+    ui->actionCut->setEnabled(false);
+    ui->actionPaste->setEnabled(false);
 }
 
 MainWindow::~MainWindow()
@@ -60,6 +66,7 @@ void MainWindow::on_actionNew_triggered()
         return;
     }
 
+    filePath = "";
     ui->TextEdit->clear();
     this->setWindowTitle(tr("新建文本 - 编辑器"));
 
@@ -95,13 +102,7 @@ void MainWindow::on_actionOpen_triggered()
 
 void MainWindow::on_actionSave_triggered()
 {
-
-
-    QFile file(filePath);
-
-    if(!file.open(QFile::WriteOnly |QFile::Text)){
-        QMessageBox::warning(this,"..","打开文件失败");
-
+    if(filePath == ""){
         QString filename = QFileDialog::getSaveFileName(this,"保存文件",".",tr("Text Files (*.txt)"));
 
         QFile file(filename);
@@ -111,8 +112,17 @@ void MainWindow::on_actionSave_triggered()
             return;
 
         }
+        file.close();
         filePath =filename;
     }
+
+    QFile file(filePath);
+        if(!file.open(QFile::WriteOnly |QFile::Text)){
+
+            QMessageBox::warning(this,"..","打开保存文件失败");
+            return;
+
+        }
 
     QTextStream out(&file);
     QString text = ui->TextEdit->toPlainText();
@@ -121,6 +131,8 @@ void MainWindow::on_actionSave_triggered()
     file.close();
 
     this->setWindowTitle(QFileInfo(filePath).absoluteFilePath());
+
+    textChanged=false;
 }
 
 
@@ -157,9 +169,12 @@ void MainWindow::on_TextEdit_textChanged()
 
 bool MainWindow::userEditConfirmed()
 {
-    QString path = filePath != "" ? filePath:"无标题.txt";
 
-    if(!textChanged){
+
+    if(textChanged){
+
+        QString path = (filePath != "") ? filePath:"无标题.txt";
+
         QMessageBox msg(this);
         msg.setWindowTitle("...");
         msg.setWindowFlag(Qt::Drawer);
@@ -180,5 +195,55 @@ bool MainWindow::userEditConfirmed()
     }
     return true;
 
+}
+
+
+void MainWindow::on_actionUndo_triggered()
+{
+    ui->TextEdit->undo();
+}
+
+
+void MainWindow::on_actionCut_triggered()
+{
+    ui->TextEdit->cut();
+}
+
+
+void MainWindow::on_actionCopy_triggered()
+{
+    ui->TextEdit->copy();
+    ui->actionPaste->setEnabled(true);
+}
+
+
+void MainWindow::on_actionPaste_triggered()
+{
+    ui->TextEdit->paste();
+}
+
+
+void MainWindow::on_actionRedo_triggered()
+{
+    ui->TextEdit->redo();
+}
+
+
+void MainWindow::on_TextEdit_undoAvailable(bool b)
+{
+    ui->actionUndo->setEnabled(b);
+}
+
+
+void MainWindow::on_TextEdit_copyAvailable(bool b)
+{
+    ui->actionCopy->setEnabled(b);
+    ui->actionCut->setEnabled(b);
+}
+
+
+void MainWindow::on_TextEdit_redoAvailable(bool b)
+{
+    ui->actionRedo->setEnabled(b);
 }
 
