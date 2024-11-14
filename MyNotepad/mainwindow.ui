@@ -70,8 +70,12 @@
     <property name="title">
      <string>格式(O)</string>
     </property>
-    <addaction name="actionFont"/>
     <addaction name="actionLineWarp"/>
+    <addaction name="actionLineNumber"/>
+    <addaction name="actionFont"/>
+    <addaction name="actionFontColor"/>
+    <addaction name="actionFontBackgroundColor"/>
+    <addaction name="actionEditorBackgroundColor"/>
    </widget>
    <widget class="QMenu" name="menu_V">
     <property name="title">
@@ -120,9 +124,9 @@
    <addaction name="separator"/>
    <addaction name="actionFont"/>
    <addaction name="actionLineWarp"/>
-   <addaction name="actionToolbar"/>
    <addaction name="separator"/>
    <addaction name="actionStatusBar"/>
+   <addaction name="actionToolbar"/>
   </widget>
   <action name="actionNew">
    <property name="icon">
