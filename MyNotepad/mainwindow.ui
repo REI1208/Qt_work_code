@@ -31,7 +31,7 @@
      <number>1</number>
     </property>
     <item>
-     <widget class="QPlainTextEdit" name="TextEdit"/>
+     <widget class="CodeEditor" name="TextEdit"/>
     </item>
    </layout>
   </widget>
@@ -125,6 +125,7 @@
    <addaction name="actionFont"/>
    <addaction name="actionLineWarp"/>
    <addaction name="separator"/>
+   <addaction name="actionLineNumber"/>
    <addaction name="actionStatusBar"/>
    <addaction name="actionToolbar"/>
   </widget>
@@ -427,6 +428,13 @@
    </property>
   </action>
   <action name="actionLineNumber">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="trd.qrc">
+     <normaloff>:/img/list_alt_24dp_5F6368_FILL0_wght400_GRAD0_opsz24.png</normaloff>:/img/list_alt_24dp_5F6368_FILL0_wght400_GRAD0_opsz24.png</iconset>
+   </property>
    <property name="text">
     <string>显示行号(&amp;L)</string>
    </property>
@@ -474,6 +482,13 @@
    </property>
   </action>
  </widget>
+ <customwidgets>
+  <customwidget>
+   <class>CodeEditor</class>
+   <extends>QPlainTextEdit</extends>
+   <header location="global">codeeditor.h</header>
+  </customwidget>
+ </customwidgets>
  <resources>
   <include location="trd.qrc"/>
  </resources>

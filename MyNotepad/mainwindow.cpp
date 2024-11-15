@@ -365,3 +365,9 @@ void MainWindow::on_TextEdit_cursorPositionChanged()
     statusCursorLabel.setText("Ln: "+ QString::number(ln+1) + "   Col: " + QString::number(col+1));
 }
 
+
+void MainWindow::on_actionLineNumber_triggered(bool checked)
+{
+    ui->TextEdit->hideLineNumberArea(checked);
+}
+
