@@ -286,12 +286,6 @@ void MainWindow::on_actionFontBackgroundColor_triggered()
 }
 
 
-void MainWindow::on_actionEditorBackgroundColor_triggered()
-{
-
-}
-
-
 void MainWindow::on_actionLineWarp_triggered()
 {
     QPlainTextEdit::LineWrapMode mode = ui->TextEdit->lineWrapMode();

@@ -98,6 +98,6 @@ void ReplaceDialog::on_btAllReplace_clicked()
 
 void ReplaceDialog::on_btCancel_clicked()
 {
-
+    accept();
 }
 
