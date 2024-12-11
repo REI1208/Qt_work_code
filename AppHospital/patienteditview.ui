@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>487</width>
-    <height>324</height>
+    <height>428</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -16,14 +16,14 @@
   <property name="styleSheet">
    <string notr="true">/* 整体窗口背景颜色 */
 QWidget {
-    background-color: #ffffff; /* 白色背景 */
+    background-color: #e8f5e9; /* 淡绿色背景 */
     font-family: &quot;Microsoft YaHei UI&quot;, sans-serif; /* 使用微软雅黑字体 */
     font-size: 10pt; /* 默认字体大小 */
 }
 
 /* 窗口标题样式 */
 QWidget#PatientEditView {
-    background-color: #f9f9f9; /* 浅灰色背景 */
+    background-color: #a5d6a7; /* 浅绿色背景 */
     border-radius: 10px; /* 圆角 */
     padding: 10px;
 }
@@ -32,13 +32,13 @@ QWidget#PatientEditView {
 QLabel {
     font-size: 10pt; /* 默认字体大小 */
     font-weight: normal;
-    color: #333333; /* 深灰色字体 */
+    color: #2e7d32; /* 深绿色字体 */
     margin-bottom: 8px;
 }
 
 /* 输入框样式 */
 QLineEdit, QDateEdit, QComboBox, QSpinBox {
-    border: 1px solid #ccc; /* 边框颜色 */
+    border: 1px solid #81c784; /* 边框颜色 */
     border-radius: 5px; /* 圆角 */
     padding: 6px;
     background-color: #ffffff; /* 白色背景 */
@@ -48,13 +48,13 @@ QLineEdit, QDateEdit, QComboBox, QSpinBox {
 
 /* 聚焦时输入框的样式 */
 QLineEdit:focus, QDateEdit:focus, QComboBox:focus, QSpinBox:focus {
-    border-color: #007BFF; /* 聚焦时的边框颜色 */
-    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5); /* 聚焦时的阴影效果 */
+    border-color: #388e3c; /* 聚焦时的边框颜色 */
+    box-shadow: 0 0 5px rgba(56, 142, 60, 0.5); /* 聚焦时的阴影效果 */
 }
 
 /* 按钮样式 */
 QPushButton {
-    background-color: #007BFF; /* 蓝色背景 */
+    background-color: #66bb6a; /* 绿色背景 */
     color: white;
     border: none;
     border-radius: 5px; /* 圆角 */
@@ -66,7 +66,7 @@ QPushButton {
 
 /* 按钮悬停时的样式 */
 QPushButton:hover {
-    background-color: #0056b3; /* 悬停时的背景颜色 */
+    background-color: #388e3c; /* 悬停时的深绿色背景颜色 */
 }
 
 /* 布局间距 */
@@ -82,7 +82,7 @@ QSpacerItem {
 
 /* 日期编辑框的样式 */
 QDateEdit {
-    border: 1px solid #ccc;
+    border: 1px solid #81c784;
     border-radius: 5px;
     padding: 6px;
     font-size: 10pt;
@@ -90,7 +90,7 @@ QDateEdit {
 
 /* 下拉框样式 */
 QComboBox {
-    border: 1px solid #ccc;
+    border: 1px solid #81c784;
     border-radius: 5px;
     padding: 6px;
     font-size: 10pt;
@@ -105,9 +105,10 @@ QComboBox::drop-down {
 /* 下拉框选项样式 */
 QComboBox QAbstractItemView {
     background-color: #ffffff;
-    border: 1px solid #ccc;
+    border: 1px solid #81c784;
     padding: 6px;
 }
+
 </string>
   </property>
   <layout class="QGridLayout" name="gridLayout_4">

@@ -24,7 +24,7 @@ PatientEditView::PatientEditView(QWidget *parent,int index)
     dataMapper->addMapping(ui->dbSpinHeight, tabModel->fieldIndex("HEIGHT"));
     dataMapper->addMapping(ui->dbWeight, tabModel->fieldIndex("WEIGHT"));
     dataMapper->addMapping(ui->dbEditMobile, tabModel->fieldIndex("MOBILEPHONE"));
-    dataMapper->addMapping(ui->dbDateEdit, tabModel->fieldIndex("DATAEDIT"));
+    dataMapper->addMapping(ui->dbDateEdit, tabModel->fieldIndex("DOB"));
     dataMapper->addMapping(ui->dbComboSex, tabModel->fieldIndex("SEX"));
     dataMapper->addMapping(ui->dbCreatedTimestamp, tabModel->fieldIndex("CREATEDTIMESTAMP"));
 
