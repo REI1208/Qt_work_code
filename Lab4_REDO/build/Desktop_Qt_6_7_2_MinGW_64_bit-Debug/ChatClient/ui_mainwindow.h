@@ -226,7 +226,7 @@ public:
 
         retranslateUi(MainWindow);
 
-        stackedWidget->setCurrentIndex(1);
+        stackedWidget->setCurrentIndex(0);
 
 
         QMetaObject::connectSlotsByName(MainWindow);
@@ -236,13 +236,13 @@ public:
     {
         MainWindow->setWindowTitle(QCoreApplication::translate("MainWindow", "\350\201\212\345\244\251\345\256\244\345\256\242\346\210\267\347\253\257", nullptr));
         titleLabel->setText(QCoreApplication::translate("MainWindow", "\345\220\264\346\235\255\351\223\256\347\232\204\350\201\212\345\244\251\345\256\244", nullptr));
-        sayButton->setText(QCoreApplication::translate("MainWindow", "\347\276\244\345\217\221", nullptr));
+        sayButton->setText(QCoreApplication::translate("MainWindow", "\345\217\221\351\200\201", nullptr));
         logoutButton->setText(QCoreApplication::translate("MainWindow", "\351\200\200\345\207\272", nullptr));
         serverEdit->setText(QCoreApplication::translate("MainWindow", "127.0.0.1", nullptr));
         label_2->setText(QCoreApplication::translate("MainWindow", "\346\234\215\345\212\241\345\231\250\345\234\260\345\235\200\357\274\232", nullptr));
-        usernameEdit->setText(QCoreApplication::translate("MainWindow", "keng", nullptr));
+        usernameEdit->setText(QCoreApplication::translate("MainWindow", "whz", nullptr));
         label_3->setText(QCoreApplication::translate("MainWindow", "\346\230\265\347\247\260\357\274\232", nullptr));
-        loginButton->setText(QCoreApplication::translate("MainWindow", "\347\231\273\345\275\225\350\201\212\345\244\251\345\256\244", nullptr));
+        loginButton->setText(QCoreApplication::translate("MainWindow", "\347\231\273\345\275\225", nullptr));
     } // retranslateUi
 
 };

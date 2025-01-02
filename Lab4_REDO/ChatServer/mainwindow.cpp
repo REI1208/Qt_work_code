@@ -22,16 +22,16 @@ MainWindow::~MainWindow()
 
 void MainWindow::on_startStopButton_clicked()
 {
-    if (m_chatServer->isListening()) { //原本在监听该客户端
+    if (m_chatServer->isListening()) {
         m_chatServer->stopServer();
         ui->startStopButton->setText("启动服务器");
-        logMessage("服务器已经停止");
+        logMessage("服务器已停止");
     } else {
-        if (!m_chatServer->listen(QHostAddress::Any, 1967)) { //启动服务器
+        if (!m_chatServer->listen(QHostAddress::Any, 1967)) {
             QMessageBox::critical(this, "错误", "无法启动服务器");
             return;
         }
-        logMessage("服务器已经启动");
+        logMessage("服务器已启动");
         ui->startStopButton->setText("停止服务器");
     }
 
