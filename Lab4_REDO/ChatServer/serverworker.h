@@ -17,7 +17,6 @@ public:
 signals:
     void logMessage(const QString &msg);
     void jsonReceived(ServerWorker *sender, const QJsonObject &docObj);
-    // 用于在有数据可读时通知主线程
     void disconnectedFromClient();
 
 public slots:

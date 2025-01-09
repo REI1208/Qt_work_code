@@ -156,12 +156,58 @@ public:
 
         loginFrame = new QFrame(loginPage);
         loginFrame->setObjectName("loginFrame");
-        loginFrame->setStyleSheet(QString::fromUtf8("#loginFrame{\n"
-"background: qlineargradient(x1:0,y1:0,x2:0,y2:1,stop:0 #e6f7ff,stop:1 #b3e5fc);\n"
-"border: 1px solid gray;\n"
-"padding: 10px;\n"
-"border-radius: 25px;\n"
-"}"));
+        loginFrame->setStyleSheet(QString::fromUtf8("\n"
+"#titleLabel {\n"
+"    background: #f5f5f5;\n"
+"    border: none;\n"
+"    border-bottom: 2px solid #3c3c3c;\n"
+"    padding: 5px;\n"
+"    font: 24pt \"\351\273\221\344\275\223\";\n"
+"    color: #b2d8b2;\n"
+"}\n"
+"\n"
+"#mainFrame {\n"
+"    border: none;\n"
+"    background: #ffffff;\n"
+"}\n"
+"\n"
+"#loginFrame {\n"
+"    background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #ffffff, stop: 1 #e0f7df);\n"
+"    border: 1px solid #b2d8b2;\n"
+"    padding: 10px;\n"
+"    border-radius: 15px;\n"
+"}\n"
+"\n"
+"QPushButton {\n"
+"    background-color: #28a745;\n"
+"    color: white;\n"
+"    border-radius: 10px;\n"
+"    padding: 5px 15px;\n"
+"    font: bold;\n"
+"}\n"
+"\n"
+"QPushButton:hover {\n"
+"    background-color: #218838;\n"
+"}\n"
+"\n"
+"QLineEdit {\n"
+"    border: 1px solid #cccccc;\n"
+"    border-radius: 5px;\n"
+"    padding: 5px;\n"
+"}\n"
+"\n"
+"QListWidget {\n"
+"    background-color: #f9f9f9;\n"
+"    border: 1px solid #dcdcdc;\n"
+"}\n"
+"\n"
+"QTextEdit {\n"
+"    background-color: #ffffff;\n"
+"    border: 1px"
+                        " solid #cccccc;\n"
+"    padding: 5px;\n"
+"}\n"
+""));
         loginFrame->setFrameShape(QFrame::Shape::StyledPanel);
         loginFrame->setFrameShadow(QFrame::Shadow::Raised);
         verticalLayout_2 = new QVBoxLayout(loginFrame);
@@ -226,7 +272,7 @@ public:
 
         retranslateUi(MainWindow);
 
-        stackedWidget->setCurrentIndex(0);
+        stackedWidget->setCurrentIndex(1);
 
 
         QMetaObject::connectSlotsByName(MainWindow);

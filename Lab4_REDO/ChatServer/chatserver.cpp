@@ -17,7 +17,7 @@ void ChatServer::incomingConnection(qintptr socketDescriptor)
     ServerWorker *worker = new ServerWorker(this);
 
     if (!worker->setSocketDescriptor(socketDescriptor)) {
-        worker->deleteLater();//该函数执行后再删除
+        worker->deleteLater();
         return;
     }
     connect(worker, &ServerWorker::logMessage, this, &ChatServer::logMessage);
@@ -26,8 +26,8 @@ void ChatServer::incomingConnection(qintptr socketDescriptor)
             std::bind(&ChatServer::userDisconnected, this, worker));
 
 
-    m_clients.append(worker);//连接成功，就将该客户端放进m_clients列表中
-    emit logMessage("新的用户连接上了");//有新连接就发一个消息
+    m_clients.append(worker);
+    emit logMessage("新的用户连接上了");
 
 }
 
@@ -57,14 +57,14 @@ void ChatServer::jsonReceived(ServerWorker *sender, const QJsonObject &docObj)
         const QJsonValue textVal = docObj.value("text");
         if (textVal.isNull() || !textVal.isString())
             return;
-        const QString text = textVal.toString().trimmed();//获取类型为type的文本内容
+        const QString text = textVal.toString().trimmed();
         if (text.isEmpty())
             return;
 
         QJsonObject message;
         message["type"] = "message";
         message["text"] = text;
-        message["sender"] = sender->userName();//服务器转发消息时要声明是转发给哪个客户端
+        message["sender"] = sender->userName();
 
         broadcast(message, sender);
     } else if (typeVal.toString().compare("login", Qt::CaseInsensitive) == 0) {
@@ -85,7 +85,7 @@ void ChatServer::jsonReceived(ServerWorker *sender, const QJsonObject &docObj)
         QJsonArray userlist;
         for (ServerWorker *worker : m_clients) {
             if (worker == sender)
-                userlist.append(worker->userName() + "*");//若在本窗口发送消息，则在该用户名前加*
+                userlist.append(worker->userName() + "*");
             else
                 userlist.append(worker->userName());
         }
@@ -98,7 +98,7 @@ void ChatServer::jsonReceived(ServerWorker *sender, const QJsonObject &docObj)
 void ChatServer::userDisconnected(ServerWorker *sender)
 {
 
-    m_clients.removeAll(sender);//从列表中移除sender
+    m_clients.removeAll(sender);
     const QString userName = sender->userName();
     if (!userName.isEmpty()) {
         QJsonObject disconnectedMessage;

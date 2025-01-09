@@ -11,7 +11,6 @@ MainWindow::MainWindow(QWidget *parent)
     m_chatServer = new ChatServer(this);
 
     connect(m_chatServer, &ChatServer::logMessage, this, &MainWindow::logMessage);
-//当服务器端有日志消息（比如新用户连接等情况）时，对应的消息能传递到MainWindow中进行处理
 }
 
 MainWindow::~MainWindow()
